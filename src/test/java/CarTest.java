@@ -5,10 +5,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class CarTest {
 
     @Test
-    void x() {
+    void checkProperty_numberOfTires() {
         Car car = new Car();
         car.setNumberOfTires(4);
         int actual = car.getNumberOfTires();
         assertEquals(4, actual);
+    }
+
+    @Test
+    void checkProperty_numberOfDoors() {
+        Car car = new Car();
+        car.setNumberOfDoors(5);
+        int actual = car.getNumberOfDoors();
+        assertEquals(5, actual);
     }
 }
