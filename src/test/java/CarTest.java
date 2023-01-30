@@ -85,4 +85,16 @@ class CarTest {
         // THEN
         assertEquals("Car{numberOfTires=4, numberOfDoors=5, seatBelt=false, airbag=true}", actual);
     }
+
+    @Test
+    void checkConstructor() {
+        // GIVEN
+        Car car = new Car(4, 5, false, true);
+
+        // WHEN
+        String actual = car.toString();
+
+        // THEN
+        assertEquals("Car{numberOfTires=4, numberOfDoors=5, seatBelt=false, airbag=true}", actual);
+    }
 }
