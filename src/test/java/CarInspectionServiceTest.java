@@ -88,4 +88,74 @@ class CarInspectionServiceTest {
         assertFalse(actual);
     }
 
+    @Test
+    void checkDoorsOfGoodCarWith3Doors() {
+        // GIVEN
+        CarInspectionService service = new CarInspectionService();
+        Car goodCar = new Car();
+        goodCar.setNumberOfDoors(3);
+
+        // WHEN
+        boolean actual = service.isNumberOfDoorsValid(goodCar);
+
+        // THEN
+        assertTrue(actual);
+    }
+    @Test
+    void checkDoorsOfGoodCarWith5Doors() {
+        // GIVEN
+        CarInspectionService service = new CarInspectionService();
+        Car goodCar = new Car();
+        goodCar.setNumberOfDoors(5);
+
+        // WHEN
+        boolean actual = service.isNumberOfDoorsValid(goodCar);
+
+        // THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    void checkDoorsOfBadCarWith4Doors() {
+        // GIVEN
+        CarInspectionService service = new CarInspectionService();
+        Car badCar = new Car();
+        badCar.setNumberOfDoors(4);
+
+        // WHEN
+        boolean actual = service.isNumberOfDoorsValid(badCar);
+
+        // THEN
+        assertFalse(actual);
+    }
+
+    @Test
+    void checkDoorsOfBadCarWith2Doors() {
+        // GIVEN
+        CarInspectionService service = new CarInspectionService();
+        Car badCar = new Car();
+        badCar.setNumberOfDoors(2);
+
+        // WHEN
+        boolean actual = service.isNumberOfDoorsValid(badCar);
+
+        // THEN
+        assertFalse(actual);
+    }
+
+    @Test
+    void checkDoorsOfBadCarWith6Doors() {
+        // GIVEN
+        CarInspectionService service = new CarInspectionService();
+        Car badCar = new Car();
+        badCar.setNumberOfDoors(6);
+
+        // WHEN
+        boolean actual = service.isNumberOfDoorsValid(badCar);
+
+        // THEN
+        assertFalse(actual);
+    }
+
+
 }

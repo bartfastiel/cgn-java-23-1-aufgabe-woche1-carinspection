@@ -10,4 +10,9 @@ public class CarInspectionService {
     public boolean isAirbagInstalled(Car car) {
         return car.getAirbag();
     }
+
+    public boolean isNumberOfDoorsValid(Car car) {
+        return car.getNumberOfDoors() == 3
+                || car.getNumberOfDoors() == 5;
+    }
 }
