@@ -69,4 +69,20 @@ class CarTest {
 
         assertFalse(a.equals(b));
     }
+
+    @Test
+    void checkToString() {
+        // GIVEN
+        Car car = new Car();
+        car.setAirbag(true);
+        car.setSeatBelt(false);
+        car.setNumberOfDoors(5);
+        car.setNumberOfTires(4);
+
+        // WHEN
+        String actual = car.toString();
+
+        // THEN
+        assertEquals("Car{numberOfTires=4, numberOfDoors=5, seatBelt=false, airbag=true}", actual);
+    }
 }

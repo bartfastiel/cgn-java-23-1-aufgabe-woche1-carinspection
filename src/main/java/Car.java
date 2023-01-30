@@ -57,4 +57,14 @@ public class Car {
         result = 31 * result + (airbag ? 1 : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "numberOfTires=" + numberOfTires +
+                ", numberOfDoors=" + numberOfDoors +
+                ", seatBelt=" + seatBelt +
+                ", airbag=" + airbag +
+                '}';
+    }
 }
