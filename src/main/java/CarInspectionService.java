@@ -6,4 +6,8 @@ public class CarInspectionService {
     public boolean isSeatBeltInstalled(Car car) {
         return car.getSeatBelt();
     }
+
+    public boolean isAirbagInstalled(Car car) {
+        return car.getAirbag();
+    }
 }

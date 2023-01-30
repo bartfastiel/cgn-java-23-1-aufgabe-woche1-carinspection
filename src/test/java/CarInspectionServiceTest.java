@@ -60,4 +60,32 @@ class CarInspectionServiceTest {
         assertFalse(actual);
     }
 
+    @Test
+    void checkAirbagOfGoodCar() {
+        // GIVEN
+        CarInspectionService service = new CarInspectionService();
+        Car goodCar = new Car();
+        goodCar.setAirbag(true);
+
+        // WHEN
+        boolean actual = service.isAirbagInstalled(goodCar);
+
+        // THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    void checkAirbagOfBadCar() {
+        // GIVEN
+        CarInspectionService service = new CarInspectionService();
+        Car badCar = new Car();
+        badCar.setAirbag(false);
+
+        // WHEN
+        boolean actual = service.isAirbagInstalled(badCar);
+
+        // THEN
+        assertFalse(actual);
+    }
+
 }
