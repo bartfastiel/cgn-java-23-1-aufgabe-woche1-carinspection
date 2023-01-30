@@ -31,4 +31,33 @@ class CarInspectionServiceTest {
         // THEN
         assertFalse(actual);
     }
+
+    @Test
+    void checkSeatBeltOfGoodCar() {
+        // GIVEN
+        CarInspectionService service = new CarInspectionService();
+        Car goodCar = new Car();
+        goodCar.setSeatBelt(true);
+
+        // WHEN
+        boolean actual = service.isSeatBeltInstalled(goodCar);
+
+        // THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    void checkSeatBeltOfBadCar() {
+        // GIVEN
+        CarInspectionService service = new CarInspectionService();
+        Car badCar = new Car();
+        badCar.setSeatBelt(false);
+
+        // WHEN
+        boolean actual = service.isSeatBeltInstalled(badCar);
+
+        // THEN
+        assertFalse(actual);
+    }
+
 }
