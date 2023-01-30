@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class CarTest {
 
@@ -34,5 +34,39 @@ class CarTest {
         car.setAirbag(true);
         boolean actual = car.getAirbag();
         assertEquals(true, actual);
+    }
+
+    @Test
+    void whenTwoCarsHaveSamePropertys_expectEqualsTrue() {
+        Car a = new Car();
+        a.setAirbag(true);
+        a.setSeatBelt(false);
+        a.setNumberOfDoors(5);
+        a.setNumberOfTires(4);
+
+        Car b = new Car();
+        b.setAirbag(true);
+        b.setSeatBelt(false);
+        b.setNumberOfDoors(5);
+        b.setNumberOfTires(4);
+
+        assertTrue(a.equals(b));
+    }
+
+    @Test
+    void whenTwoCarsHaveDifferentPropertys_expectEqualsFalse() {
+        Car a = new Car();
+        a.setAirbag(true);
+        a.setSeatBelt(false);
+        a.setNumberOfDoors(5);
+        a.setNumberOfTires(4);
+
+        Car b = new Car();
+        b.setAirbag(false);
+        b.setSeatBelt(false);
+        b.setNumberOfDoors(5);
+        b.setNumberOfTires(4);
+
+        assertFalse(a.equals(b));
     }
 }

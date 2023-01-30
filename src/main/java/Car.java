@@ -35,4 +35,26 @@ public class Car {
     public boolean getAirbag() {
         return airbag;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Car car = (Car) o;
+
+        if (numberOfTires != car.numberOfTires) return false;
+        if (numberOfDoors != car.numberOfDoors) return false;
+        if (seatBelt != car.seatBelt) return false;
+        return airbag == car.airbag;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = numberOfTires;
+        result = 31 * result + numberOfDoors;
+        result = 31 * result + (seatBelt ? 1 : 0);
+        result = 31 * result + (airbag ? 1 : 0);
+        return result;
+    }
 }
