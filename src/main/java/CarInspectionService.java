@@ -15,4 +15,12 @@ public class CarInspectionService {
         return car.getNumberOfDoors() == 3
                 || car.getNumberOfDoors() == 5;
     }
+
+    public boolean isValid(Car car) {
+        return isNumberOfTiresValid(car)
+                && isNumberOfDoorsValid(car)
+                && isAirbagInstalled(car)
+                && isSeatBeltInstalled(car)
+                ;
+    }
 }

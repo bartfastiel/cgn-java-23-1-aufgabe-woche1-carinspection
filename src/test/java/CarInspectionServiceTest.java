@@ -157,5 +157,56 @@ class CarInspectionServiceTest {
         assertFalse(actual);
     }
 
+    @Test
+    void checkValidityOfCompletelyBadCar() {
+        // GIVEN
+        CarInspectionService service = new CarInspectionService();
+        Car badCar = new Car();
+        badCar.setAirbag(false);
+        badCar.setSeatBelt(false);
+        badCar.setNumberOfDoors(6);
+        badCar.setNumberOfTires(5);
+
+        // WHEN
+        boolean actual = service.isValid(badCar);
+
+        // THEN
+        assertFalse(actual);
+    }
+
+    @Test
+    void checkValidityOfGoodCar() {
+        // GIVEN
+        CarInspectionService service = new CarInspectionService();
+        Car badCar = new Car();
+        badCar.setAirbag(true);
+        badCar.setSeatBelt(true);
+        badCar.setNumberOfDoors(5);
+        badCar.setNumberOfTires(4);
+
+        // WHEN
+        boolean actual = service.isValid(badCar);
+
+        // THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    void checkValidityOfPartiallyBadCar() {
+        // GIVEN
+        CarInspectionService service = new CarInspectionService();
+        Car badCar = new Car();
+        badCar.setAirbag(true);
+        badCar.setSeatBelt(true);
+        badCar.setNumberOfDoors(5);
+        badCar.setNumberOfTires(100);
+
+        // WHEN
+        boolean actual = service.isValid(badCar);
+
+        // THEN
+        assertFalse(actual);
+    }
+
 
 }
