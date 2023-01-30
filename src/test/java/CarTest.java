@@ -19,4 +19,12 @@ class CarTest {
         int actual = car.getNumberOfDoors();
         assertEquals(5, actual);
     }
+
+    @Test
+    void checkProperty_seatBelt() {
+        Car car = new Car();
+        car.setSeatBelt(true);
+        boolean actual = car.getSeatBelt();
+        assertEquals(true, actual);
+    }
 }
