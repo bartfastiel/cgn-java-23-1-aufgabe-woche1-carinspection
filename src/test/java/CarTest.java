@@ -27,4 +27,12 @@ class CarTest {
         boolean actual = car.getSeatBelt();
         assertEquals(true, actual);
     }
+
+    @Test
+    void checkProperty_airbag() {
+        Car car = new Car();
+        car.setAirbag(true);
+        boolean actual = car.getAirbag();
+        assertEquals(true, actual);
+    }
 }
